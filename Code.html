@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<!--
+        Vaishnavi Vitthal Daware
+        2019BTECS00095
+       Practical No. 5B (Batch – T5)
+        Problem Statement 2:
+Design and develop a static web page using HTML for following requirement. Access it 
+locally and in LAN using web server
+-->
+<head>
+  <title>codes</title>
+</head>
+<body>
+    <h1><center>Program </center> </h1>
+    <br>
+    <br>
+    <h3 style="color:rgb(112, 165, 224);"> Problem Statement</h3>
+    <p>Write a program in any language to find the maximum and 
+        minimum element in an array.</p>
+    <br>
+    <br>
+    
+    <h3 style="color:rgb(112, 165, 224);"> Code</h3>
+  <code>#include &lt;stdio.h&gt; <br />
+    struct pair<br>
+{<br>
+  int min;<br>
+  int max;<br>
+}; <br>
+ 
+struct pair getMinMax(int arr[], int n)<br>
+{<br>
+  struct pair minmax; <br>   
+  int i;<br>
+   
+  /*If there is only one element then return it as min and max both*/<br>
+  if (n == 1)<br>
+  {<br>
+     minmax.max = arr[0];<br>
+     minmax.min = arr[0];  <br>  
+     return minmax;<br>
+  }   <br>
+ 
+  /* If there are more than one elements, then initialize min
+      and max*/<br>
+  if (arr[0] > arr[1]) <br>
+  {<br>
+      minmax.max = arr[0];<br>
+      minmax.min = arr[1];<br>
+  } <br>
+  else<br>
+  {<br>
+      minmax.max = arr[1];<br>
+      minmax.min = arr[0];<br>
+  }   <br>
+ 
+  for (i = 2; i<n; i++)
+  {
+    if (arr[i] >  minmax.max)     <br>
+      minmax.max = arr[i];<br>
+   
+    else if (arr[i] <  minmax.min)  <br>   
+      minmax.min = arr[i];<br>
+  }
+  <br>
+  return minmax;<br>
+}
+<br>
+/* Driver program to test above function */<br>
+int main()<br>
+{   <br>
+  int arr[] = {1000, 11, 445, 1, 330, 3000};<br>
+  int arr_size = 6;<br>
+  struct pair minmax = getMinMax (arr, arr_size);<br>
+  printf("nMinimum element is %d", minmax.min);<br>
+  printf("nMaximum element is %d", minmax.max);<br>
+  getchar();<br>
+} <br>
+    
+  </code>
+  <br>
+  <br>
+  <h3 style="color:rgb(112, 165, 224);"> Input</h3>
+  <p>Input <kbd>arr[]=</kbd>{1000, 11, 445, 1, 330, 3000} </p>
+  <br>
+  <br>
+  <h3 style="color:rgb(112, 165, 224);">Output</h3>
+  <p>program output</p>
+  <samp>
+    Minimum element is 1 <br>
+    Maximum element is 3000 
+  </samp>
+  <br>
+  <br>
+  <h3 style="color:rgb(112, 165, 224);"> Variables</h3>
+  <p><var>int</var></p>
+
+  <br>
+  <br>
+  <h3 style="color:rgb(112, 165, 224);"> Complexity</h3>
+  <p> O(N) </p>
+
+</body>
+</html>
+
+
+
+  
+
+
+  
